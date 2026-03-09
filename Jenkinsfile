@@ -1,17 +1,28 @@
-pipeline {
+pipeline 
+{
     agent any
+	triggers 
+	{
+        	githubPush()
+        	cron('H/10 * * * *')
+    	}
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building project from GitHub'
-            }
-        }
+    	stages 
+	{
+        	stage('Build') 
+		{
+            		steps 
+			{
+                		echo 'Building project from GitHub'
+            		}
+        	}
 
-        stage('Test') {
-            steps {
-                echo 'Running tests'
-            }
-        }
+        	stage('Test') 
+		{
+             		steps 
+			{
+                		echo 'Running tests'
+            		}
+        	}
     }
 }
