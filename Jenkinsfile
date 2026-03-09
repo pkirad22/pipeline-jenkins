@@ -4,7 +4,7 @@ pipeline
 	triggers 
 	{
         	githubPush()
-        	cron('H/10 * * * *')
+        	cron('H/2 * * * *')
     	}
 
     	stages 
